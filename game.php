@@ -18,21 +18,21 @@ if ($_COOKIE["won"] != "true") {
 
   if (!$isCorrect) {
 
-    if ($_COOKIE["ives"] > 0){
+    if ($_COOKIE["lives"] > 0){
       $_COOKIE["lives"] = $_COOKIE["lives"] -1;
         setcookie("lives", $_COOKIE["lives"]);
         }
     if ($_COOKIE["lives"] == 0) {
-      $_COOKIE ["message"] = 'You lost the game you were hanged':);
+      $_COOKIE ["message"] = 'You lost the game you were hanged';
       setcookie("message", $_COOKIE["message"]);
-    }
+      }
   }
 }
 
 if ($_COOKIE["woord_string"] == $_COOKIE["woord"]) {
-  $_COOKIE['message'] = '＼(＾O＾)／Good job YOU WIN!! dinnt get hanged for now ( ͡° ͜ʖ ͡°)';
+  $_COOKIE["message"] = '＼(＾O＾)／Good job YOU WIN!! dinnt get hanged for now ( ͡° ͜ʖ ͡°)';
   $_COOKIE['won'] = 'true';
-  setcookie('message', $_COOKIE['message']);
+  setcookie("message", $_COOKIE["message"]);
   setcookie('won', $_COOKIE['won']);
 }
 }
@@ -43,6 +43,7 @@ if ($_COOKIE["woord_string"] == $_COOKIE["woord"]) {
     <title>Galgje the game</title>
   </head>
   <body>
+
     <form class="" method="post">
     <input type="submit" name="letters" value="A">
     <input type="submit" name="letters" value="B">
@@ -69,6 +70,18 @@ if ($_COOKIE["woord_string"] == $_COOKIE["woord"]) {
     <input type="submit" name="letters" value="X">
     <input type="submit" name="letters" value="Z">
     <input type="submit" name="letters" value="Y">
-
+<?php
+for ($i=0; $i <strlen($_COOKIE["woord"]); $i++) {
+ echo "<h1 class='streepje'>" . $_COOKIE['woord_string'][$i] . "</h1>";
+}
+ ?>
+ 
+ <?php
+       if (isset($_COOKIE['message']))
+       {
+         echo "<h1>" . $_COOKIE['message'] . "</h1>";
+         header("refresh:2; url=galgje.php");
+       }
+       ?>
   </body>
 </html>
