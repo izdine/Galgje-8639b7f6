@@ -5,7 +5,7 @@ $woordString = " ";
 $message = " ";
 $Won = "fasle";
 
-$$Randomwoord = array("Bit", "Acdemy", "Bitacdemy", "jarvis" );
+$Randomwoord = array("Bit", "Acdemy", "Bitacdemy", "jarvis" );
 
 
 if  (isset($_POST["EigenWoord"])) {
