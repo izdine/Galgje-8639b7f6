@@ -1,23 +1,17 @@
 <?php
 $letter;
 $isCorrect = false;
-
-if (isset($_POST["EigenWoord"]) && $_COOKIE["lives"] !=0) {
+if (isset($_POST["EigenWoord"]) && $_COOKIE['lives'] !=0) {
 $letter = $_POST["EigenWoord"];
-
 for ($i = 0; $i <strlen($_COOKIE["woord"]); $i++) {
   if ($letter == $_COOKIE["woord"][$i]) {
-
     $_COOKIE["woord_string"][$i] = $_COOKIE["woord"][$i];
       setcookie("woord_string", $_COOKIE["woord"][$i]);
       $isCorrect = true;
     }
   }
-
 if ($_COOKIE["won"] != "true") {
-
   if (!$isCorrect) {
-
     if ($_COOKIE["lives"] > 0){
       $_COOKIE["lives"] = $_COOKIE["lives"] -1;
         setcookie("lives", $_COOKIE["lives"]);
@@ -28,7 +22,6 @@ if ($_COOKIE["won"] != "true") {
       }
   }
 }
-
 if ($_COOKIE["woord_string"] == $_COOKIE["woord"]) {
   $_COOKIE["message"] = '＼(＾O＾)／Good job YOU WIN!! dinnt get hanged for now ( ͡° ͜ʖ ͡°)';
   $_COOKIE['won'] = 'true';
@@ -71,7 +64,7 @@ if ($_COOKIE["woord_string"] == $_COOKIE["woord"]) {
     <input type="submit" name="letters" value="Z">
     <input type="submit" name="letters" value="Y">
 <?php
-for ($i=0; $i <strlen($_COOKIE["woord"]); $i++) {
+for ($i=0; $i <strlen($_COOKIE['woord']); $i++) {
  echo "<h1 class='streepje'>" . $_COOKIE['woord_string'][$i] . "</h1>";
 }
  ?>
