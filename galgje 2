@@ -117,7 +117,7 @@ echo $show;
 
 if(count($_SESSION['foute_letters']) >= 8)
 {
-    echo '<h1 style="text-decoration:blink">BRUHH</h1> Het woord was '.$_SESSION['woord'];
+    echo '<h1 style="text-decoration:blink">BRUHH（◞‸◟）</h1> Het woord was '.$_SESSION['woord'];
     $form = false;
     session_destroy();
     header("Refresh: 5; URL=".$_SERVER['REQUEST_URI']);
@@ -126,7 +126,7 @@ if(count($_SESSION['foute_letters']) >= 8)
 
 if($show == $_SESSION['woord'] && $form == true)
 {
-    echo '<h1 style="text-decoration:blink">Lekker bezig kut je hebt het!!!!!!!!!!!!!!</h1>';
+    echo '<h1 style="text-decoration:blink">＼(＾O＾)／Lekker bezig kut je hebt het!!!!!!!!!!!!!!</h1>';
     $form = false;
     session_destroy();
     header("Refresh: 5; URL=".$_SERVER['REQUEST_URI']);
