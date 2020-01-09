@@ -24,7 +24,10 @@ $woordenarray = array("jarvis", "bit", "academy", "school");
 
 if(!isset($_SESSION['woord']))
 {
-
+    $rand= rand(0,count($woordenarray)-1);
+    $woord=$woordenarray[$rand];
+    $_SESSION["woord"] = strtoupper(trim($woord));
+}
  
 $form = true;
 
